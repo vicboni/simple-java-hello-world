@@ -43,8 +43,6 @@ spec:
           sh 'mvn -B -DskipTests clean package'
           sh 'mvn test'
         }
-      }
-      steps {
         container('docker') {
           sh 'docker build -t my-app:$BUILD_NUMBER .'
         }
