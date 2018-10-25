@@ -38,6 +38,12 @@ spec:
   stages {
 
     stage('Build') {
+      when {
+        anyOf {
+          branch 'master';
+          branch 'develop'
+        }
+      }
       steps {
         container('maven') {
           sh 'mvn -B -DskipTests clean package'
@@ -50,6 +56,9 @@ spec:
     }
 
     stage('Run') {
+      when {
+        branch 'master';
+      }
       steps {
         container('docker') {
           sh 'docker run my-app:$BUILD_NUMBER'
@@ -64,3 +73,4 @@ spec:
    }
  }
 }
+
