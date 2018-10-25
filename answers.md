@@ -13,4 +13,5 @@ remotes/origin/master
 
 
 ## 1.11
-
+La branche 'develop' sert aux développement des fonctionnalités
+La branche 'master' est la branche principale qui reçoit les livraisons et est étiquetée
